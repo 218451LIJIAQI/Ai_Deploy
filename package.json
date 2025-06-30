@@ -1,0 +1,21 @@
+{
+  "name": "moodify-workspace",
+  "version": "1.0.0",
+  "description": "Moodify Workspace",
+  "private": true,
+  "workspaces": [
+    "moody-music"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "install:all": "npm install && cd moody-music && npm install",
+    "dev:frontend": "cd moody-music && npm start",
+    "build:frontend": "cd moody-music && npm run build"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}
