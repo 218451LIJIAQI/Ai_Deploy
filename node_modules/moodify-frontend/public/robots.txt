@@ -1,0 +1,19 @@
+# Robots.txt for Moodify - AI Music Recommendation App
+# This file tells search engine crawlers which pages or files they can or can't request from your site.
+# For more information about the robots.txt standard, see:
+# https://www.robotstxt.org/robotstxt.html
+
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Disallow crawling of API endpoints and sensitive areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location (if available)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl-delay: 1 second (optional, for being polite to servers)
+Crawl-delay: 1
