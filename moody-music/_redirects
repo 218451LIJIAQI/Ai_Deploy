@@ -1,0 +1,5 @@
+# SPA redirect rules
+/*    /index.html   200
+ 
+# API proxy (replace with your actual backend URL)
+/api/*  https://your-backend-url.herokuapp.com/api/:splat  200 

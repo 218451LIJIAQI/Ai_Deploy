@@ -1,0 +1,39 @@
+[build]
+  # Specify build directory for frontend application
+  base = "moody-music"
+  # Build command - using build script to handle permissions
+  command = "chmod +x build.sh && ./build.sh"
+  # Publish directory
+  publish = "build"
+
+# Single Page Application redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API proxy settings - redirect API requests to backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://ai-deploy-2.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# Security headers configuration
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Build environment settings
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "8"
+  REACT_APP_API_BASE_URL = "https://ai-deploy-2.onrender.com"
+
+# Functions configuration (if using Netlify Functions)
+[functions]
+  directory = "functions" 
